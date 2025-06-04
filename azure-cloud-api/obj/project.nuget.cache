@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D5TmcPGiozg=",
+  "dgSpecHash": "8lP0EtfRvaA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mauro\\Desktop\\azure cloud\\azure-cloud-api\\azure-cloud-api.csproj",
+  "projectFilePath": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\azure-cloud-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mauro\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\Mauro\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,18 +1,12 @@
 import { PublicClientApplication, InteractionType } from '@azure/msal-browser';
 import {
-  MsalService,
   MsalGuardConfiguration,
-  MsalRedirectComponent,
-  MsalBroadcastService,
-  MSAL_INSTANCE,
-  MSAL_GUARD_CONFIG,
-  MsalGuard
 } from '@azure/msal-angular';
 
 export const msalInstance = new PublicClientApplication({
   auth: {
-    clientId: '58f0de44-3829-4034-a88d-d5d6eb3b720d', 
-    authority: 'https://login.microsoftonline.com/c8540511-000c-4296-ba04-bb1049ccbfdb', 
+    clientId: 'SUA_CLIENT_ID_AQUI',
+    authority: 'https://login.microsoftonline.com/SEU_TENANT_ID',
     redirectUri: 'http://localhost:4200/auth'
   },
   cache: {

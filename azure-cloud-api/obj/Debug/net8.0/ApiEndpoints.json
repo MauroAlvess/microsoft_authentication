@@ -2,7 +2,7 @@
   {
     "ContainingType": "azure_cloud_api.Controllers.UserController",
     "Method": "ExchangeMicrosoftToken",
-    "RelativePath": "User/exchange-microsoft-token",
+    "RelativePath": "User/exchange-microsoft",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -17,8 +17,18 @@
   },
   {
     "ContainingType": "azure_cloud_api.Controllers.UserController",
-    "Method": "GetTenantInfoAsync",
-    "RelativePath": "User/tenant-info",
+    "Method": "GetTenantGroupsAsync",
+    "RelativePath": "User/tenant-groups",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "azure_cloud_api.Controllers.UserController",
+    "Method": "GetTenantUsersAsync",
+    "RelativePath": "User/tenant-users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

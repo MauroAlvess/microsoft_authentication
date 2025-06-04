@@ -1,183 +1,72 @@
-tr,
-td,
-th,
-tbody,
-thead,
-mat-card,
-mat-accordion {
-    color: #000;
+.sidenav-container {
+    height: 100vh;
 }
 
-mat-option {
-    color: #000;
-    opacity: 1;
-    background-color: #fff;
+.main-content {
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
 }
 
-.main-content-wrapper {
+.navbar {
     display: flex;
-    justify-content: center;
-
-    align-items: flex-start;
-
-    min-height: calc(100vh - 64px);
-
-    padding: 20px;
-
-    box-sizing: border-box;
-
+    align-items: center;
 }
 
-.container {
-
-    width: 95%;
-
-    max-width: 900px;
-
-    margin: 0;
-
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffff;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+.icon-name {
+    position: relative;
+    bottom: 4px;
+    right: 10px;
 }
 
-
-mat-toolbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+.app-title {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .spacer {
     flex: 1 1 auto;
 }
 
-
-.loading-card,
-.error-card,
-.no-data-card {
-    text-align: center;
-    padding: 40px;
-    margin-bottom: 20px;
-    background-color: #ffffff;
-
-}
-
-.loading-card mat-spinner {
-    margin: 0 auto 15px auto;
-}
-
-.error-card {
-    border-left: 5px solid #ef5350;
-
-    background-color: #ffebee;
-
-    color: #c62828;
-
-}
-
-.error-card mat-icon {
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.tenant-summary-card {
-    margin-bottom: 20px;
-    background-color: #ffffff;
-
-}
-
-.tenant-summary-card mat-list-item {
-    height: auto !important;
-    align-items: flex-start;
-    padding: 10px 0;
-}
-
-.tenant-summary-card mat-list-item mat-icon {
-    margin-right: 10px;
-    margin-top: 5px;
-}
-
-.mat-list-item-title {
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.9em;
-}
-
-.mat-list-item-line {
-    font-size: 1.1em;
-    color: rgba(0, 0, 0, 0.87);
-    word-break: break-word;
-
-}
-
-
-.details-accordion {
-    margin-top: 20px;
-}
-
-.mat-expansion-panel-header {
-    height: 64px !important;
-}
-
-.mat-expansion-panel-header mat-icon {
-    margin-right: 10px;
-}
-
-.full-width-filter {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.table-container {
-    overflow-x: auto;
-}
-
-.full-width-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.full-width-table th {
-    background-color: #e0e0e0;
-    color: rgba(0, 0, 0, 0.87);
+.user-circle {
+    background: #1976d2;
+    color: #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
-.full-width-table td {
-    border-bottom: 1px solid #eee;
+.sidenav {
+    width: 250px;
+    padding: 16px;
 }
 
-.mat-no-data-row {
-    text-align: center;
-    padding: 20px;
-    font-style: italic;
-    color: #666;
+.main-content {
+    margin-top: 175px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    padding: 32px 8px;
 }
 
-mat-card {
-    margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .tenant-summary-card mat-list-item {
+@media (max-width: 900px) {
+    .main-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 4px;
     }
 
-    .tenant-summary-card mat-list-item mat-icon {
-        margin-bottom: 5px;
-    }
-
-    .mat-list-item-title,
-    .mat-list-item-line {
+    .list-section {
         width: 100%;
+        min-width: unset;
+        max-width: unset;
+        padding: 16px 8px;
     }
 }

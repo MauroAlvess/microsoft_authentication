@@ -15,13 +15,13 @@ namespace azure_cloud_api.Controllers
             _userService = userservice ?? throw new ArgumentNullException(nameof(userservice));
         }
 
-        [HttpGet("tenant-info")]
-        public async Task<IActionResult> GetTenantInfoAsync()
+        [HttpGet("tenant-users")]
+        public async Task<IActionResult> GetTenantUsersAsync()
         {
             try
             {
-                var tenantInfo = await _userService.GetTenantInfoAsync();
-                return Ok(tenantInfo);
+                var users = await _userService.GetTenantUsersAsync();
+                return Ok(users);
             }
             catch (Exception ex)
             {
@@ -29,7 +29,21 @@ namespace azure_cloud_api.Controllers
             }
         }
 
-        [HttpPost("exchange-microsoft-token")]
+        [HttpGet("tenant-groups")]
+        public async Task<IActionResult> GetTenantGroupsAsync()
+        {
+            try
+            {
+                var groups = await _userService.GetTenantGroupsAsync();
+                return Ok(groups);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
+        }
+
+        [HttpPost("exchange-microsoft")]
         public async Task<IActionResult> ExchangeMicrosoftToken([FromBody] MicrosoftTokenRequestDto request)
         {
             var jwt = await _userService.ExchangeMicrosoftTokenAsync(request);

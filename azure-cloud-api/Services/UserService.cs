@@ -1,5 +1,5 @@
-﻿using azure_cloud_api.Modals.Request;
-using azure_cloud_api.Modals.Response;
+﻿using azure_cloud_api.Modals;
+using azure_cloud_api.Modals.Request;
 using azure_cloud_api.Repositories.IRepositories;
 using azure_cloud_api.Services.IServices;
 using Microsoft.Graph;
@@ -21,9 +21,14 @@ namespace azure_cloud_api.Services
             _configuration = configuration;
         }
 
-        public async Task<TenantInfoResponseDto> GetTenantInfoAsync()
+        public async Task<IEnumerable<UsersDto>> GetTenantUsersAsync()
         {
-            return await _userRepository.GetTenantInfoAsync();
+            return await _userRepository.GetTenantUsersAsync();
+        }
+
+        public async Task<IEnumerable<GroupDto>> GetTenantGroupsAsync()
+        {
+            return await _userRepository.GetTenantGroupsAsync();
         }
 
         public async Task<string?> ExchangeMicrosoftTokenAsync(MicrosoftTokenRequestDto request)

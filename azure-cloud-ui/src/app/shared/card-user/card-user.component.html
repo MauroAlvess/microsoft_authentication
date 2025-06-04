@@ -1,0 +1,10 @@
+<div class="list-section">
+    <h2>Usuários</h2>
+    <div *ngFor="let user of users">
+        <mat-icon matListAvatar color="primary">person</mat-icon>
+        <div class="list-content">
+            <div class="list-title">{{ user.displayName }}</div>
+            <div class="list-secondary">{{ user.userPrincipalName }}</div>
+        </div>
+    </div>
+</div>

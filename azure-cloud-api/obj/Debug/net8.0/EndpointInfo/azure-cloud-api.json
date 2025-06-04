@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/User/tenant-info": {
+    "/User/tenant-users": {
       "get": {
         "tags": [
           "User"
@@ -17,7 +17,19 @@
         }
       }
     },
-    "/User/exchange-microsoft-token": {
+    "/User/tenant-groups": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/User/exchange-microsoft": {
       "post": {
         "tags": [
           "User"

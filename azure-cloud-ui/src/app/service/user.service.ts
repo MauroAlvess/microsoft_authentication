@@ -11,11 +11,15 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getTenantInfo(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/tenant-info`);
+  getTenantUsers(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/tenant-users`);
+  }
+
+  getTenantGroups(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/tenant-groups`);
   }
 
   exchangeMicrosoftToken(request: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/exchange-microsoft-token`, request);
+    return this.http.post(`${this.apiUrl}/exchange-microsoft`, request);
   }
 }

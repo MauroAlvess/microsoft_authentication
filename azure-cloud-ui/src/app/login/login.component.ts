@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   loginWithAzure(): void {
-    console.log('Iniciando login com Microsoft Azure AD...');
     this.msalService.loginRedirect();
   }
 
