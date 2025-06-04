@@ -3,12 +3,8 @@ import { Router } from '@angular/router';
 import { MsalService } from '@azure/msal-angular';
 import { UserService } from '../service/user.service';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { CardUserComponent } from '../shared/card-user/card-user.component';
-import { CardGroupComponent } from '../shared/card-group/card-group.component';
+import { CardTenantComponent } from '../shared/card-tenant/card-tenant.component';
 
 
 
@@ -18,12 +14,8 @@ import { CardGroupComponent } from '../shared/card-group/card-group.component';
   styleUrls: ['./home.component.css'],
   imports: [
     CommonModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
     MatIconModule,
-    CardUserComponent,
-    CardGroupComponent
+    CardTenantComponent
   ]
 })
 export class HomeComponent implements OnInit {

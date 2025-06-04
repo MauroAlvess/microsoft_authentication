@@ -1,72 +1,62 @@
-.sidenav-container {
-    height: 100vh;
-}
-
 .main-content {
-    flex-direction: column;
-    align-items: center;
-    overflow: auto;
-}
-
-.navbar {
     display: flex;
-    align-items: center;
-}
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
 
-.icon-name {
-    position: relative;
-    bottom: 4px;
-    right: 10px;
-}
-
-.app-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.spacer {
-    flex: 1 1 auto;
-}
-
-.user-circle {
-    background: #1976d2;
-    color: #fff;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.sidenav {
-    width: 250px;
-    padding: 16px;
-}
-
-.main-content {
-    margin-top: 175px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
-    padding: 32px 8px;
-}
-
-@media (max-width: 900px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        padding: 16px 4px;
+    >div:first-child {
+        width: 20%;
+        padding: 20px 0px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
     }
 
-    .list-section {
-        width: 100%;
-        min-width: unset;
-        max-width: unset;
-        padding: 16px 8px;
+    >div {
+        margin: 20px;
+        height: calc(100vh - 40px);
+    }
+
+    >div:last-child {
+        width: 78%;
+        background-color: #ffffff;
+        border-radius: 5px;
+
+        >div {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            overflow: auto;
+            flex-direction: column;
+        }
+
+        >div:first-child {
+            margin-bottom: 2.5px;
+        }
+    }
+}
+
+.cards-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 75px;
+    background: #fafafa;
+    color: #000;
+    margin-bottom: 2.5px;
+
+    >p,
+    h4 {
+        margin: 0;
+    }
+
+    >mat-icon {
+        margin: 0px 10px;
+    }
+
+    >h4 {
+        font-size: 18px;
+        margin-right: 5px;
     }
 }

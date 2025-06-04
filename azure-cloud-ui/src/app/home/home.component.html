@@ -1,25 +1,50 @@
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="over" class="sidenav">
-        <h3>Informações do Usuário</h3>
-        <p><strong>Tenant ID:</strong> {{ tenantId }}</p>
-        <p><strong>Usuário:</strong> {{ userName }}</p>
-    </mat-sidenav>
+<div class="main-content">
 
-    <mat-toolbar color="primary" class="navbar">
-        <span class="app-title"></span>
-        <span class="spacer"></span>
-        <button class="icon-name" mat-icon-button (click)="sidenav.open()">
-            <span class="user-circle">
-                {{ userName ? userName.charAt(0).toUpperCase() : '?' }}
-            </span>
-        </button>
-        <button mat-icon-button aria-label="Sair" (click)="logout()">
+    <div>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <div class="mb-5">
+                <img src="/svgs/azure-cloud.svg" alt="Azure Cloud Logo">
+            </div>
+        </div>
+
+        <div class="cards-sidebar">
+            <mat-icon>timer</mat-icon>
+            <h4>Total de Usuários: </h4>
+            <p>{{users.length}}</p>
+        </div>
+
+        <div class="cards-sidebar">
+            <mat-icon>calculate</mat-icon>
+            <h4>Total de Grupos: </h4>
+            <p>{{groups.length}}</p>
+        </div>
+
+        <div class="cards-sidebar">
+            <mat-icon>person</mat-icon>
+            <h4>Nome: </h4>
+            <p>{{userName}}</p>
+        </div>
+
+        <div class="cards-sidebar">
+            <mat-icon>vpn_key</mat-icon>
+            <h4>Tenant: </h4>
+            <p>{{tenantId}}</p>
+        </div>
+
+        <div class="cards-sidebar" style="cursor: pointer;" (click)="logout()">
             <mat-icon>logout</mat-icon>
-        </button>
-    </mat-toolbar>
+            <h4>Sair </h4>
+        </div>
 
-    <div class="main-content">
-        <app-card-user [users]="users"></app-card-user>
-        <app-card-group [groups]="groups"></app-card-group>
     </div>
-</mat-sidenav-container>
+
+    <div>
+        <div>
+            <app-card-tenant [title]="'Usuários'" [icon]="'person'" [items]="users"></app-card-tenant>
+        </div>
+        <div>
+            <app-card-tenant [title]="'Grupos'" [icon]="'group'" [items]="groups"></app-card-tenant>
+        </div>
+    </div>
+
+</div>

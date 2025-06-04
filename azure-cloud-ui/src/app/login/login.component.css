@@ -1,0 +1,35 @@
+.btn {
+    width: 200px;
+    border-radius: 5px;
+    border: solid 1px #fff;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.5s;
+
+    &:hover {
+        transition: 0.5s;
+        border: solid 1px #000;
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+.container-login {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+
+    >div:first-child {
+        width: 30%;
+    }
+
+    >div:last-child {
+        cursor: pointer;
+        width: 70%;
+        background-image: url(/pngs/background.png);
+        background-size: cover;
+        background-position: center;
+
+    }
+}

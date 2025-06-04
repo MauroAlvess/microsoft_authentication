@@ -1,0 +1,10 @@
+<div class="list-section">
+    <h2>{{title}}</h2>
+    <div *ngFor="let item of items">
+        <mat-icon matListAvatar color="accent">{{icon}}</mat-icon>
+        <div class="list-content">
+            <div class="list-title">{{ item.displayName }}</div>
+            <div class="list-secondary">{{ item.id }}</div>
+        </div>
+    </div>
+</div>

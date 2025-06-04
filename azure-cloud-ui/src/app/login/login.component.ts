@@ -79,4 +79,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     this._destroying$.next(undefined);
     this._destroying$.complete();
   }
+
+  openWallpaperSite() {
+    window.open('https://microsoft.design/wallpapers/', '_blank');
+  }
 }
