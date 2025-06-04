@@ -1,0 +1,183 @@
+tr,
+td,
+th,
+tbody,
+thead,
+mat-card,
+mat-accordion {
+    color: #000;
+}
+
+mat-option {
+    color: #000;
+    opacity: 1;
+    background-color: #fff;
+}
+
+.main-content-wrapper {
+    display: flex;
+    justify-content: center;
+
+    align-items: flex-start;
+
+    min-height: calc(100vh - 64px);
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+}
+
+.container {
+
+    width: 95%;
+
+    max-width: 900px;
+
+    margin: 0;
+
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+mat-toolbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+
+.loading-card,
+.error-card,
+.no-data-card {
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+
+}
+
+.loading-card mat-spinner {
+    margin: 0 auto 15px auto;
+}
+
+.error-card {
+    border-left: 5px solid #ef5350;
+
+    background-color: #ffebee;
+
+    color: #c62828;
+
+}
+
+.error-card mat-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.tenant-summary-card {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+
+}
+
+.tenant-summary-card mat-list-item {
+    height: auto !important;
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+.tenant-summary-card mat-list-item mat-icon {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.mat-list-item-title {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.9em;
+}
+
+.mat-list-item-line {
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.87);
+    word-break: break-word;
+
+}
+
+
+.details-accordion {
+    margin-top: 20px;
+}
+
+.mat-expansion-panel-header {
+    height: 64px !important;
+}
+
+.mat-expansion-panel-header mat-icon {
+    margin-right: 10px;
+}
+
+.full-width-filter {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.full-width-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.full-width-table th {
+    background-color: #e0e0e0;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: bold;
+}
+
+.full-width-table td {
+    border-bottom: 1px solid #eee;
+}
+
+.mat-no-data-row {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+mat-card {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .tenant-summary-card mat-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tenant-summary-card mat-list-item mat-icon {
+        margin-bottom: 5px;
+    }
+
+    .mat-list-item-title,
+    .mat-list-item-line {
+        width: 100%;
+    }
+}

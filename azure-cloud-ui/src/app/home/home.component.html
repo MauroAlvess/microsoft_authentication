@@ -1,0 +1,230 @@
+<mat-toolbar color="primary">
+    <span>Dashboard do Tenant Azure AD</span>
+    <span class="spacer"></span>
+    <span *ngIf="userName && tenantId" class="user-info">
+        <mat-icon>person</mat-icon> {{ userName }} &nbsp; | &nbsp;
+        <mat-icon>badge</mat-icon> Tenant: {{ tenantId }}
+    </span>
+    <button mat-icon-button routerLink="/">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button (click)="msalService.logout()">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="main-content-wrapper">
+    <div class="container mat-elevation-z2">
+        <mat-card *ngIf="isLoading" class="loading-card">
+            <mat-spinner diameter="50"></mat-spinner>
+            <p>Carregando informações do tenant...</p>
+        </mat-card>
+
+        <mat-card *ngIf="errorMessage" class="error-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <mat-icon color="warn">error</mat-icon>
+                    Erro ao carregar dados
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{ errorMessage }}</p>
+                <button mat-flat-button color="primary" (click)="getTenantInfoAsync()">
+                    <mat-icon>refresh</mat-icon> Tentar Novamente
+                </button>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card *ngIf="tenantInfo && !isLoading && !errorMessage" class="tenant-summary-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <mat-icon>business</mat-icon>
+                    Informações Gerais do Tenant
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>corporate_fare</mat-icon>
+                        <div matListItemTitle>Nome do Tenant:</div>
+                        <div matListItemLine>{{ tenantInfo?.tenantDisplayName ?? 'Não disponível' }}</div>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>group</mat-icon>
+                        <div matListItemTitle>Total de Usuários:</div>
+                        <div matListItemLine>{{ tenantInfo?.totalUsersCount ?? 0 }}</div>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>groups</mat-icon>
+                        <div matListItemTitle>Total de Grupos:</div>
+                        <div matListItemLine>{{ tenantInfo?.totalGroupsCount ?? 0 }}</div>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="(tenantInfo?.verifiedDomains?.length ?? 0) > 0">
+                        <mat-icon matListItemIcon>dns</mat-icon>
+                        <div matListItemTitle>Domínios Verificados:</div>
+                        <div matListItemLine>
+                            <span *ngFor="let domain of tenantInfo?.verifiedDomains || []; last as isLast">
+                                {{ domain }}{{ !isLast ? ', ' : '' }}
+                            </span>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-accordion class="details-accordion" *ngIf="tenantInfo && !isLoading && !errorMessage">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>person</mat-icon> Usuários ({{ dataSourceUsers.data.length }})
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Primeiros 10 usuários do tenant
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-form-field appearance="fill" class="full-width-filter">
+                    <mat-label>Filtrar usuários</mat-label>
+                    <input matInput (keyup)="applyFilter($event, dataSourceUsers)" placeholder="Ex: John Doe"
+                        #inputUsers>
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceUsers" class="mat-elevation-z8 full-width-table">
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> ID </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="displayName">
+                            <th mat-header-cell *matHeaderCellDef> Nome de Exibição </th>
+                            <td mat-cell *matCellDef="let element"> {{element.displayName}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="mail">
+                            <th mat-header-cell *matHeaderCellDef> E-mail </th>
+                            <td mat-cell *matCellDef="let element"> {{element.mail || 'N/A'}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="userPrincipalName">
+                            <th mat-header-cell *matHeaderCellDef> UPN </th>
+                            <td mat-cell *matCellDef="let element"> {{element.userPrincipalName}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedUsersColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedUsersColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="4">Nenhum usuário encontrado correspondente ao filtro
+                                "{{inputUsers.value}}"</td>
+                        </tr>
+                    </table>
+                </div>
+                <mat-paginator #usersPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>group_work</mat-icon> Grupos ({{ dataSourceGroups.data.length }})
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Primeiros 10 grupos do tenant
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-form-field appearance="fill" class="full-width-filter">
+                    <mat-label>Filtrar grupos</mat-label>
+                    <input matInput (keyup)="applyFilter($event, dataSourceGroups)" placeholder="Ex: Desenvolvedores"
+                        #inputGroups>
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceGroups" class="mat-elevation-z8 full-width-table">
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> ID </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="displayName">
+                            <th mat-header-cell *matHeaderCellDef> Nome de Exibição </th>
+                            <td mat-cell *matCellDef="let element"> {{element.displayName}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="mail">
+                            <th mat-header-cell *matHeaderCellDef> E-mail </th>
+                            <td mat-cell *matCellDef="let element"> {{element.mail || 'N/A'}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedGroupsColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedGroupsColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="3">Nenhum grupo encontrado correspondente ao filtro
+                                "{{inputGroups.value}}"</td>
+                        </tr>
+                    </table>
+                </div>
+                <mat-paginator #groupsPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel *ngIf="(tenantInfo?.applications?.length ?? 0) > 0">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>apps</mat-icon> Aplicativos Registrados ({{ dataSourceApplications?.data?.length ?? 0
+                        }})
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Primeiros 10 aplicativos do tenant
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-form-field appearance="fill" class="full-width-filter">
+                    <mat-label>Filtrar aplicativos</mat-label>
+                    <input matInput (keyup)="applyFilter($event, dataSourceApplications)" placeholder="Ex: Minha App"
+                        #inputApps>
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceApplications" class="mat-elevation-z8 full-width-table">
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> ID </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="displayName">
+                            <th mat-header-cell *matHeaderCellDef> Nome de Exibição </th>
+                            <td mat-cell *matCellDef="let element"> {{element.displayName}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="appId">
+                            <th mat-header-cell *matHeaderCellDef> ID do Aplicativo </th>
+                            <td mat-cell *matCellDef="let element"> {{element.appId}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedApplicationsColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedApplicationsColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="3">Nenhum aplicativo encontrado correspondente ao filtro
+                                "{{inputApps.value}}"</td>
+                        </tr>
+                    </table>
+                </div>
+                <mat-paginator #applicationsPaginator [pageSizeOptions]="[5, 10, 20]"
+                    showFirstLastButtons></mat-paginator>
+            </mat-expansion-panel>
+
+        </mat-accordion>
+
+        <mat-card *ngIf="!tenantInfo && !isLoading && !errorMessage" class="no-data-card">
+            <mat-card-content>
+                <mat-icon>info</mat-icon>
+                <p>Nenhuma informação do tenant disponível.</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
