@@ -7,30 +7,6 @@
       "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|c:\\users\\mauro\\desktop\\microsoft_authentication\\azure-cloud-api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|c:\\users\\mauro\\desktop\\microsoft_authentication\\azure-cloud-api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|c:\\users\\mauro\\desktop\\microsoft_authentication\\azure-cloud-api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|c:\\users\\mauro\\desktop\\microsoft_authentication\\azure-cloud-api\\repositories\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:repositories\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|c:\\users\\mauro\\desktop\\microsoft_authentication\\azure-cloud-api\\services\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:services\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|c:\\users\\mauro\\desktop\\microsoft_authentication\\azure-cloud-api\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}|",
-      "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|c:\\users\\mauro\\desktop\\microsoft_authentication\\azure-cloud-api\\appsettings.example.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{047649F9-7AC3-449F-A92B-E5C5CB1CA628}|azure-cloud-api.csproj|solutionrelative:appsettings.example.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -42,34 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.example.json",
-              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\appsettings.example.json",
-              "RelativeDocumentMoniker": "appsettings.example.json",
-              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\appsettings.example.json",
-              "RelativeToolTip": "appsettings.example.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-04T13:57:51.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-04T13:57:51.065Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -78,74 +28,23 @@
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-06-04T13:17:59.269Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:59:12.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Services\\IServices\\IUserService.cs",
-              "RelativeDocumentMoniker": "Services\\IServices\\IUserService.cs",
-              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Services\\IServices\\IUserService.cs",
-              "RelativeToolTip": "Services\\IServices\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:58:38.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAEwCEAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:57:53.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Repositories\\IRepositories\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\IRepositories\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Repositories\\IRepositories\\IUserRepository.cs",
-              "RelativeToolTip": "Repositories\\IRepositories\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:57:20.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Repositories\\UserRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwAEAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:55:29.853Z",
+              "Title": "appsettings.example.json",
+              "DocumentMoniker": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\appsettings.example.json",
+              "RelativeDocumentMoniker": "appsettings.example.json",
+              "ToolTip": "C:\\Users\\Mauro\\Desktop\\microsoft_authentication\\azure-cloud-api\\appsettings.example.json",
+              "RelativeToolTip": "appsettings.example.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-04T21:46:04.024Z",
               "EditorCaption": ""
             }
           ]

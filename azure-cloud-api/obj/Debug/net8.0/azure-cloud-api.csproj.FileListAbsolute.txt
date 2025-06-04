@@ -161,3 +161,4 @@ C:\Users\Mauro\Desktop\microsoft_authentication\azure-cloud-api\obj\Debug\net8.0
 C:\Users\Mauro\Desktop\microsoft_authentication\azure-cloud-api\obj\Debug\net8.0\azure-cloud-api.pdb
 C:\Users\Mauro\Desktop\microsoft_authentication\azure-cloud-api\obj\Debug\net8.0\azure-cloud-api.genruntimeconfig.cache
 C:\Users\Mauro\Desktop\microsoft_authentication\azure-cloud-api\obj\Debug\net8.0\ref\azure-cloud-api.dll
+C:\Users\Mauro\Desktop\microsoft_authentication\azure-cloud-api\bin\Debug\net8.0\appsettings.example.json
