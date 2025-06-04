@@ -5,8 +5,8 @@ import {
 
 export const msalInstance = new PublicClientApplication({
   auth: {
-    clientId: '58f0de44-3829-4034-a88d-d5d6eb3b720d',
-    authority: 'https://login.microsoftonline.com/c8540511-000c-4296-ba04-bb1049ccbfdb',
+    clientId: '',
+    authority: '',
     redirectUri: 'http://localhost:4200/auth',
   },
   cache: {
